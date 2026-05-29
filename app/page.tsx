@@ -224,7 +224,11 @@ export default function VertronSite() {
     </div>
   )
 }
-{ num: "04", title: "Continuous Evolution", desc: "Ongoing optimization and capability expansion." }
+{[
+            { num: "01", title: "Discovery & Architecture", desc: "Deep operational analysis and AI workforce design." },
+            { num: "02", title: "Agent Design & Testing", desc: "Specialized agents built and validated against real workflows." },
+            { num: "03", title: "Production Deployment", desc: "Hermes Gateway infrastructure with monitoring and reliability." },
+            { num: "04", title: "Continuous Evolution", desc: "Ongoing optimization and capability expansion." }
           ].map((step, i) => (
             <div key={i}>
               <div className="font-mono text-6xl font-bold text-white/10">{step.num}</div>
