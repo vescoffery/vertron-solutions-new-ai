@@ -131,39 +131,30 @@ export default function VertronSite() {
         </div>
       </div>
 
-      {/* Process */}
-      <div className="grid md:grid-cols-4 gap-8">
-  {[
-    { num: "01", title: "Discovery & Architecture", desc: "Deep operational analysis and AI workforce design." },
-    { num: "02", title: "Agent Design & Testing", desc: "Specialized agents built and validated against real workflows." },
-    { num: "03", title: "Production Deployment", desc: "Hermes Gateway infrastructure with monitoring and reliability." },
-    { num: "04", title: "Continuous Evolution", desc: "Ongoing optimization and capability expansion." }
-  ].map((step, i) => (
-    <div key={i}>
-      <div className="font-mono text-6xl font-bold text-white/10">{step.num}</div>
-      <div className="font-semibold text-2xl mt-6 tracking-tight">{step.title}</div>
-      <div className="text-white/60 mt-3">{step.desc}</div>
-    </div>
-  
-      {/* Why Vertron */}
-      <div id="why" className="max-w-screen-2xl mx-auto px-8 py-24 border-t border-white/10 bg-zinc-950/50">
-        <div className="grid md:grid-cols-12 gap-x-16 items-center">
-          <div className="md:col-span-7">
-            <div className="text-[#67e8f9] text-xs font-semibold tracking-[3px]">THE VERTRON DIFFERENCE</div>
-            <h2 className="font-display text-6xl tracking-tighter mt-3 leading-none">We don’t sell AI.<br />We build systems that work.</h2>
-          </div>
-          <div className="md:col-span-5 mt-12 md:mt-0 space-y-8">
-            {["Production infrastructure, not demos", "True multi-agent coordination", "Full ownership & transparency"].map((item, i) => (
-              <div key={i} className="flex gap-5">
-                <Check className="text-[#67e8f9] mt-1" />
-                <div className="font-semibold text-xl">{item}</div>
-              </div>
-            ))}
-          </div>
+            {/* Process */}
+      <div id="process" className="max-w-screen-2xl mx-auto px-8 py-24 border-t border-white/10">
+        <div className="max-w-xl mb-16">
+          <div className="text-[#67e8f9] text-xs font-semibold tracking-[3px]">THE VERTRON PROCESS</div>
+          <h2 className="font-display text-6xl tracking-tighter mt-3">From concept to production in weeks.</h2>
+        </div>
+
+        <div className="grid md:grid-cols-4 gap-8">
+          {[
+            { num: "01", title: "Discovery & Architecture", desc: "Deep operational analysis and AI workforce design." },
+            { num: "02", title: "Agent Design & Testing", desc: "Specialized agents built and validated against real workflows." },
+            { num: "03", title: "Production Deployment", desc: "Hermes Gateway infrastructure with monitoring and reliability." },
+            { num: "04", title: "Continuous Evolution", desc: "Ongoing optimization and capability expansion." }
+          ].map((step, i) => (
+            <div key={i}>
+              <div className="font-mono text-6xl font-bold text-white/10">{step.num}</div>
+              <div className="font-semibold text-2xl mt-6 tracking-tight">{step.title}</div>
+              <div className="text-white/60 mt-3">{step.desc}</div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Contact Form */}
+      {/* Why Vertron */}{/* Contact Form */}
       <div id="contact" className="max-w-screen-2xl mx-auto px-8 py-24 border-t border-white/10">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
