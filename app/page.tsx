@@ -143,7 +143,7 @@ export default function VertronSite() {
             { num: "01", title: "Discovery & Architecture", desc: "Deep operational analysis and AI workforce design." },
             { num: "02", title: "Agent Design & Testing", desc: "Specialized agents built and validated against real workflows." },
             { num: "03", title: "Production Deployment", desc: "Hermes Gateway infrastructure with monitoring and reliability." },
-     { num: "04", title: "Continuous Evolution", desc: "Ongoing optimization and capability expansion." }
+            { num: "04", title: "Continuous Evolution", desc: "Ongoing optimization and capability expansion." }
           ].map((step, i) => (
             <div key={i}>
               <div className="font-mono text-6xl font-bold text-white/10">{step.num}</div>
@@ -151,8 +151,7 @@ export default function VertronSite() {
               <div className="text-white/60 mt-3">{step.desc}</div>
             </div>
           ))}
-        </div>
-      </div>
+        </div>      </div>
 
       {/* Why Vertron */}
       <div id="why" className="max-w-screen-2xl mx-auto px-8 py-24 border-t border-white/10 bg-zinc-950/50">
