@@ -70,7 +70,7 @@ export default function VertronSite() {
             <button onClick={() => scrollTo('contact')} className="px-10 py-5 bg-white text-[#0A0A0F] font-semibold rounded-3xl text-xl hover:bg-[#67e8f9] transition-all flex items-center justify-center gap-x-3 group">
               Book Strategy Call <ArrowRight className="group-hover:translate-x-1 transition" />
             </button>
-    <button onClick={() => scrollTo('capabilities')} className="px-10 py-5 border border-white/25 hover:bg-white/5 font-semibold rounded-3xl text-xl transition-all">
+            <button onClick={() => scrollTo('capabilities')} className="px-10 py-5 border border-white/25 hover:bg-white/5 font-semibold rounded-3xl text-xl transition-all">
               See What We Build
             </button>
           </div>
@@ -131,7 +131,7 @@ export default function VertronSite() {
         </div>
       </div>
 
-            {/* Process */}
+      {/* Process */}
       <div id="process" className="max-w-screen-2xl mx-auto px-8 py-24 border-t border-white/10">
         <div className="max-w-xl mb-16">
           <div className="text-[#67e8f9] text-xs font-semibold tracking-[3px]">THE VERTRON PROCESS</div>
@@ -140,73 +140,6 @@ export default function VertronSite() {
 
         <div className="grid md:grid-cols-4 gap-8">
           {[
-            { num: "01", title: "Discovery & Architecture", desc: "Deep operational analysis and AI workforce design." },
-            { num: "02", title: "Agent Design & Testing", desc: "Specialized agents built and validated against real workflows." },
-            { num: "03", title: "Production Deployment", desc: "Hermes Gateway infrastructure with monitoring and reliability." },
-            { num: "04", title: "Continuous Evolution", desc: "Ongoing optimization and capability expansion." }
-          ].map((step, i) => (
-            <div key={i}>
-              <div className="font-mono text-6xl font-bold text-white/10">{step.num}</div>
-              <div className="font-semibold text-2xl mt-6 tracking-tight">{step.title}</div>
-              <div className="text-white/60 mt-3">{step.desc}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Why Vertron */}{/* Contact Form */}
-      <div id="contact" className="max-w-screen-2xl mx-auto px-8 py-24 border-t border-white/10">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-6xl tracking-tighter">Ready to deploy your AI workforce?</h2>
-            <p className="mt-6 text-2xl text-white/70">Let’s design a system that gives you a genuine operational advantage.</p>
-          </div>
-
-          {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  required
-                  className="w-full bg-zinc-900 border border-white/10 rounded-2xl px-6 py-4 text-lg focus:outline-none focus:border-[#67e8f9]"
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                />
-                <input
-                  type="email"
-                  placeholder="Work Email"
-                  required
-                  className="w-full bg-zinc-900 border border-white/10 rounded-2xl px-6 py-4 text-lg focus:outline-none focus:border-[#67e8f9]"
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                />
-              </div>
-              <textarea
-                placeholder="Tell us about your current operations and automation goals..."
-                rows={6}
-                required
-                className="w-full bg-zinc-900 border border-white/10 rounded-3xl px-6 py-4 text-lg focus:outline-none focus:border-[#67e8f9] resize-y"
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              />
-              <button
-                type="submit"
-                className="w-full px-10 py-5 bg-white text-[#0A0A0F] font-semibold rounded-3xl text-xl hover:bg-[#67e8f9] transition-all flex items-center justify-center gap-x-3 mt-2"
-              >
-                Request Strategy Call <ArrowRight />
-              </button>
-            </form>
-          ) : (
-            <div className="text-center py-16 border border-white/10 rounded-3xl">
-              <div className="text-[#67e8f9] text-7xl mb-6">✓</div>
-              <h3 className="text-4xl font-semibold tracking-tight">Thank you.</h3>
-              <p className="mt-4 text-xl text-white/70">We’ll review your request and get back to you within 24 hours.</p>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  )
-}
-{[
             { num: "01", title: "Discovery & Architecture", desc: "Deep operational analysis and AI workforce design." },
             { num: "02", title: "Agent Design & Testing", desc: "Specialized agents built and validated against real workflows." },
             { num: "03", title: "Production Deployment", desc: "Hermes Gateway infrastructure with monitoring and reliability." },
