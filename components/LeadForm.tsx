@@ -35,41 +35,41 @@ export default function LeadForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <input
         type="text"
         name="full-name"
         placeholder="Full Name"
         required
-        className="w-full p-3 border rounded"
+        className="w-full bg-zinc-900 border border-white/10 text-white placeholder:text-white/50 p-4 rounded-2xl focus:outline-none focus:border-[#67e8f9]"
       />
       <input
         type="email"
         name="work-email"
         placeholder="Work Email"
         required
-        className="w-full p-3 border rounded"
+        className="w-full bg-zinc-900 border border-white/10 text-white placeholder:text-white/50 p-4 rounded-2xl focus:outline-none focus:border-[#67e8f9]"
       />
       <textarea
         name="message"
         placeholder="Tell us about your current operations and automation goals..."
         required
-        rows={5}
-        className="w-full p-3 border rounded"
+        rows={6}
+        className="w-full bg-zinc-900 border border-white/10 text-white placeholder:text-white/50 p-4 rounded-3xl focus:outline-none focus:border-[#67e8f9] resize-y"
       />
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-black text-white py-3 rounded font-medium disabled:opacity-50"
+        className="w-full px-10 py-5 bg-white text-[#0A0A0F] font-semibold rounded-3xl text-xl hover:bg-[#67e8f9] transition-all flex items-center justify-center gap-x-3 mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
       >
-        {status === 'loading' ? 'Sending...' : 'Request Strategy Call'}
+        {status === 'loading' ? 'Sending...' : 'Request Strategy Call'} <ArrowRight className="inline" />
       </button>
 
       {status === 'success' && (
-        <p className="text-green-600">Thank you! We’ll reach out within 24 hours.</p>
+        <p className="text-[#67e8f9] text-center">Thank you! We’ll reach out within 24 hours.</p>
       )}
       {status === 'error' && (
-        <p className="text-red-600">Something went wrong. Please try again.</p>
+        <p className="text-red-400 text-center">Something went wrong. Please try again or email us directly.</p>
       )}
     </form>
   );
