@@ -7,15 +7,33 @@ import { ArrowRight, Check } from 'lucide-react'
 export default function VertronSite() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent("Strategy Call Request - Vertron Solutions")
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )
-    window.location.href = `mailto:vertronsolutions@hotmail.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
+    setIsSubmitting(true)
+    setError('')
+
+    try {
+      const response = await fetch('https://vertronsolutions.app.n8n.cloud/webhook/vertron-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        setError('Something went wrong. Please try again or email vertronsolutions@hotmail.com directly.')
+      }
+    } catch (err) {
+      setError('Network error. Please try again or email vertronsolutions@hotmail.com directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const scrollTo = (id: string) => {
@@ -205,11 +223,17 @@ export default function VertronSite() {
                 className="w-full bg-zinc-900 border border-white/10 rounded-3xl px-6 py-4 text-lg focus:outline-none focus:border-[#67e8f9] resize-y"
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               />
+              {error && (
+                <div className="text-red-400 text-sm bg-red-950/50 border border-red-900 p-3 rounded-2xl">
+                  {error}
+                </div>
+              )}
               <button
                 type="submit"
-                className="w-full px-10 py-5 bg-white text-[#0A0A0F] font-semibold rounded-3xl text-xl hover:bg-[#67e8f9] transition-all flex items-center justify-center gap-x-3 mt-2"
+                disabled={isSubmitting}
+                className="w-full px-10 py-5 bg-white text-[#0A0A0F] font-semibold rounded-3xl text-xl hover:bg-[#67e8f9] transition-all flex items-center justify-center gap-x-3 mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Request Strategy Call <ArrowRight />
+                {isSubmitting ? 'Sending...' : 'Request Strategy Call'} <ArrowRight />
               </button>
             </form>
           ) : (
