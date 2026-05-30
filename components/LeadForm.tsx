@@ -42,21 +42,21 @@ export default function LeadForm() {
         name="full-name"
         placeholder="Full Name"
         required
-        className="w-full bg-zinc-900 border border-white/10 text-black placeholder:text-zinc-400 p-4 rounded-2xl focus:outline-none focus:border-[#67e8f9]"
+        className="w-full bg-zinc-900 border border-white/10 text-white placeholder:text-white/60 p-4 rounded-2xl focus:outline-none focus:border-[#67e8f9]"
       />
       <input
         type="email"
         name="work-email"
         placeholder="Work Email"
         required
-        className="w-full bg-zinc-900 border border-white/10 text-black placeholder:text-zinc-400 p-4 rounded-2xl focus:outline-none focus:border-[#67e8f9]"
+        className="w-full bg-zinc-900 border border-white/10 text-white placeholder:text-white/60 p-4 rounded-2xl focus:outline-none focus:border-[#67e8f9]"
       />
       <textarea
         name="message"
         placeholder="Tell us about your current operations and automation goals..."
         required
         rows={6}
-        className="w-full bg-zinc-900 border border-white/10 text-black placeholder:text-zinc-400 p-4 rounded-3xl focus:outline-none focus:border-[#67e8f9] resize-y"
+        className="w-full bg-zinc-900 border border-white/10 text-white placeholder:text-white/60 p-4 rounded-3xl focus:outline-none focus:border-[#67e8f9] resize-y"
       />
       <button
         type="submit"
